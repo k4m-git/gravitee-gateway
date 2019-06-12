@@ -29,10 +29,7 @@ import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 
 import java.util.Collections;
@@ -49,8 +46,8 @@ import static org.mockito.Mockito.when;
 @RunWith(VertxUnitRunner.class)
 public class HttpEndpointRuleHandlerTest {
 
-    @Rule
-    public WireMockRule wireMockRule = new WireMockRule(wireMockConfig().dynamicPort());
+    @ClassRule
+    public static final WireMockRule wireMockRule = new WireMockRule(wireMockConfig().dynamicPort());
 
     private Vertx vertx;
 
